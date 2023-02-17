@@ -1,0 +1,16 @@
+/* Write your code here. */
+
+.result-container {
+  background-color: #fbc7d4;
+  border-radius: 20px;
+  border-color: #ffffff33;
+  padding: 25px;
+  border-style: solid;
+  display: flex;
+  align-items: center;
+}
+
+.status-logo {
+  height: 300px;
+  background-size: cover;
+}

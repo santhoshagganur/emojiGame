@@ -1,0 +1,34 @@
+/* Write your code here. */
+.navbar-container {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+.score {
+  font-family: Roboto;
+  font-size: 18px;
+  color: #ffffff;
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.scores-container {
+  display: flex;
+}
+
+.game-logo {
+  height: 50px;
+  background-size: cover;
+  margin-top: 5px;
+}
+
+.main-heading {
+  margin-left: 10px;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 30px;
+}
