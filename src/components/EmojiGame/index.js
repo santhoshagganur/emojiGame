@@ -69,12 +69,27 @@ class EmojiGame extends Component {
     )
   }
 
+  playAgain = () => {
+    const {topScore, clickedEmojis} = this.state
+    if (topScore < clickedEmojis.length) {
+      this.setState({topScore: clickedEmojis.length})
+    }
+    this.setState({clickedEmojis: []})
+    this.setState({isGameEnd: false})
+  }
+
   renderWinOrLose = () => {
     const {clickedEmojis} = this.state
-    const {emojisList} = this.state
+    const {emojisList} = this.props
     const isWin = clickedEmojis.length === emojisList.length
 
-    return <WinOrLoseCard score={clickedEmojis.length} isWin={isWin} />
+    return (
+      <WinOrLoseCard
+        score={clickedEmojis.length}
+        isWin={isWin}
+        playAgain={this.playAgain}
+      />
+    )
   }
 
   render() {
