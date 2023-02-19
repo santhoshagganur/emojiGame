@@ -2,7 +2,19 @@
 import './index.css'
 
 const NavBar = props => {
-  const {score, topScore} = props
+  const {score, topScore, isGameEnd} = props
+
+  const renderNavbarScores = () => {
+    if (isGameEnd) {
+      return null
+    }
+    return (
+      <div className="scores-container">
+        <p className="score"> Score: {score}</p>
+        <p className="score"> Top Score: {topScore} </p>
+      </div>
+    )
+  }
 
   return (
     <nav>
@@ -15,11 +27,7 @@ const NavBar = props => {
           />
           <h1 className="main-heading"> Emoji Game </h1>
         </div>
-
-        <div className="scores-container">
-          <p className="score"> Score: {score}</p>
-          <p className="score"> Top Score: {topScore} </p>
-        </div>
+        <div>{renderNavbarScores}</div>
       </div>
     </nav>
   )
