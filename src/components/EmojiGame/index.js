@@ -33,6 +33,9 @@ class EmojiGame extends Component {
       this.finishGameUpdateScores(clickedEmojis.length)
     } else if (clickedEmojis.length === emojisList.length - 1) {
       this.finishGameUpdateScores(clickedEmojis.length)
+      this.setState(prevState => ({
+        clickedEmojis: [...prevState.clickedEmojis, id],
+      }))
     } else {
       this.setState(prevState => ({
         clickedEmojis: [...prevState.clickedEmojis, id],
@@ -97,7 +100,11 @@ class EmojiGame extends Component {
 
     return (
       <div className="bg-container">
-        <NavBar score={clickedEmojis.length} topScore={topScore} />
+        <NavBar
+          score={clickedEmojis.length}
+          topScore={topScore}
+          isGameEnd={isGameEnd}
+        />
         <div>{isGameEnd ? this.renderWinOrLose() : this.getEmojisGame()}</div>
       </div>
     )
